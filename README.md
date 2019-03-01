@@ -6,7 +6,7 @@
 A free and open-source [Jekyll](https://jekyllrb.com) theme. Based on Rohan Chandra [type-theme](https://github.com/rohanchandra/type-theme) with a few new features:
 
 * Responsive design
-* Portfolio page for your projects
+* apps page for your projects
 * Tags compatibility
 * Bootstrap : [Get Bootstrap](http://getbootstrap.com/)
 * Search feature : [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
@@ -47,7 +47,7 @@ jekyll-theme-basically-basic
 ├── _draft	               # To store your drafts, they won't be published on your site
 ├── _includes	               # theme includes
 ├── _layouts                   # theme layouts (see below for details)
-├── _portfolio	               # collection of article to be populated in the portfolio page
+├── _apps	               # collection of article to be populated in the apps page
 ├── _posts                     # Blog posts
 ├── _sass                      # Sass partials 
 ├── assets
@@ -59,7 +59,7 @@ jekyll-theme-basically-basic
 |   ├── 404.md		       # To be displayed when url is wrong
 |   ├── about.md               # About example page
 |   ├── gallery.md             # Gallery page for your photos
-|   ├── portfolio.md	       # Portfolio page for your projects
+|   ├── apps.md	       # apps page for your projects
 |   ├── search.html	       # Search page
 |   └── search.json            # Specify the search target (page, post, collection)
 ├── _config.yml                # sample configuration
@@ -283,18 +283,18 @@ You can use this layout in another page (adding a title to it will make it appea
 
 The recommended width and height for the home picture is width:`2484px;` and height:`1280px` which are the dimension of the actual picture for it to be rolling down as you scroll the page. 
 
-### Portfolio
+### apps
 
-Portfolio is a feature page that will take all the markdown/html files in the `_portfolio` folder to create a 3-columns image portfolio matrix.
+apps is a feature page that will take all the markdown/html files in the `_apps` folder to create a 3-columns image apps matrix.
 
-To use the portfolio, simply create a `portfolio.md` with this information inside:
+To use the apps, simply create a `apps.md` with this information inside:
 ```yml
 --- 
 layout: page
-title : Portfolio 
+title : apps 
 ---
 
-{% include portfolio.html %}
+{% include apps.html %}
 ```
 
 ### Gallery
@@ -314,7 +314,7 @@ gallery: "assets/img/pexels"
 
 ### Search
 
-The search feature is based on [Simple-Jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search) there is a `search.json` file that will create a list of all of the site posts, pages and portfolios. 
+The search feature is based on [Simple-Jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search) there is a `search.json` file that will create a list of all of the site posts, pages and appss. 
 
 Then there's a `search.js` displaying the formatted results entered in the `search.html` page.
 
@@ -329,7 +329,7 @@ special_page:
 
 ### Tags
 
-Tags should be placed between `[]` in your post metadata. Separate each tag with a comma. Tags are recommended for posts and portfolio items.
+Tags should be placed between `[]` in your post metadata. Separate each tag with a comma. Tags are recommended for posts and apps items.
 
 For example:
 
@@ -362,7 +362,7 @@ So if you're using the template as a theme, Make sure you have:
   - A `index.html` file
   - The right `_config.yml` with the theme setting such as `theme: type-on-strap` uncommented
   - The feature page included. (ex: as it is already in `pages`)
-  - Some content ready in `_posts` and `_portfolio` to be displayed
+  - Some content ready in `_posts` and `_apps` to be displayed
 
 Now you can use any theme gem with github pages : [29/11/2017 Github Pages Broadcast](https://github.com/blog/2464-use-any-theme-with-github-pages)
 

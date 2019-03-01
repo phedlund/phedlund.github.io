@@ -13,8 +13,8 @@
         "content"  : {{ post.content | jsonify }}
       } {% unless forloop.last %},{% endunless %}
    {% endfor %}
-   {% if site.portfolio.size > 0 %},{% endif %}
-   {% for page in site.portfolio %}
+   {% if site.apps.size > 0 %},{% endif %}
+   {% for page in site.apps %}
      {
        {% if page.title != nil %}
           "title"    : "{{ page.title | escape }}",

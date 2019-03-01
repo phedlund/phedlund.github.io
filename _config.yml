@@ -1,23 +1,23 @@
 # SITE CONFIGURATION
 baseurl: "/Type-on-Strap"
-url: "https://sylhare.github.io"
-title: Type on Strap # site's title
-description: "A website with blog posts and pages" # used by search engines
+url: "https://phedlund.github.io"
+title: PBH Apps # site's title
+description: "Apps for iOS and Mac" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type on Strap # blog's title
-  avatar: assets/img/triangle.svg
+  title: PBH.dev # blog's title
+  avatar: assets/img/icon.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
 
   # Header and footer text
-  header_text: Change header text in <code>_config.yml</code>
-  header_feature_image: assets/img/pexels/triangular.jpeg
+  header_text: Welcome to PBH.dev
+  header_feature_image: assets/img/banner.jpg
   footer_text: >
-    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+    Copyright © 2019 Peter B. Hedlund
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
@@ -28,7 +28,7 @@ theme_settings:
   facebook:
   flickr:
   gitlab:
-  github: "sylhare"
+  github: "phedlund"
   google_plus:
   instagram:
   keybase:
@@ -46,23 +46,29 @@ theme_settings:
   
   # Sharing options
   share_buttons:
-    facebook: true
-    twitter: true
-    google_plus: true
+    facebook:
+    twitter:
+    google_plus:
     tumblr:
     pinterest:
     pocket:
-    reddit: true
+    reddit:
     linkedin:
     wordpress:
-    email: true
+    email:
 
   # Scripts / Features 
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
-  katex: true # Enable if using math markup
+  katex: # Enable if using math markup
   
   special_page:
+    privacy:
+      icon: "lock"
+      enabled: true
+    contact:
+      icon: "envelope"
+      enabled: true
     search: 
       icon: "search"
       enabled: true
@@ -97,9 +103,9 @@ paginate: 5
 paginate_path: "blog/page:num"
 
 
-# PORTFOLIO
+# apps
 collections:
-  portfolio:
+  apps:
     output: true
     permalink: /:collection/:name
 
@@ -112,4 +118,19 @@ sass:
   style: :compressed
 plugins: [jekyll-paginate, jekyll-seo-tag]
 #theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
-exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - type-on-strap.gemspec
+  - LICENSE
+  - README.md
+  - screenshot.png - 
+  - package.json
+  - node_modules
+  - gulpfile.js
+  

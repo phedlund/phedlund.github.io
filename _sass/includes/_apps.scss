@@ -1,4 +1,4 @@
-.portfolio-link {
+.apps-link {
     display: block;
     position: relative;
     margin: 0 auto;
@@ -40,13 +40,13 @@
     }
 }
 
-.portfolio-grid {
+.apps-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
 }
-.portfolio-cell {
-  flex: 0 0 32%;
+.apps-cell {
+  flex: 0 0 36%;
   margin-bottom: 10px;
 }
