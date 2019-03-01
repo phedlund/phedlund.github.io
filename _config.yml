@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/Type-on-Strap"
-url: "https://phedlund.github.io"
+# baseurl: "/"
+url: "https://pbh.dev"
 title: PBH Apps # site's title
 description: "Apps for iOS and Mac" # used by search engines
 
