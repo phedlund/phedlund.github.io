@@ -29,3 +29,5 @@ jekyll-theme-type-on-strap.gemspec
 # Bundler
 .bundle/config
 vendor/
+
+jekyll-lightbox/README.md
