@@ -7,6 +7,17 @@ permalink: /pmc-reader/
 date: 22 February 2019
 tags: [PMC Reader, PubMed, Pubmed Central]
 sourcelink: "https://github.com/phedlund/PMC-Reader"
+screenshots:
+  - filename: iphone1
+    caption : "Main app window in portrait. The list can be rearranged and searched. Tap the add button to download more manuscripts."
+  - filename: iphone2
+    caption : "Landscape orientation is fully supported."
+  - filename: iphone3
+    caption : "Adjust settings for the best reading experience."
+  - filename: iphone4
+    caption : "You can switch between white, sepia, and night themes. Navigate quickly between sections of an article."
+  - filename: iphone5
+    caption : "Tap to enjoy fullscreen reading. Citations are shown in a small popover."
 ---
 
 PMC Reader is an iOS app for conveniently reading [PubMed Central](http://www.ncbi.nlm.nih.gov/pmc/) manuscripts. PMC reader supports iPhone, iPod touch, and iPad.
@@ -30,13 +41,7 @@ PMC Reader offers many advantages
 
 **Screenshots**
 
-Click on a thumbnail to see the full size image.
-
-- Main app window in portrait. The list can be rearranged and searched. Tap the add button to download more manuscripts.
-- Landscape orientation is fully supported.
-- Adjust settings for the best reading experience.
-- You can switch between white, sepia, and night themes. Navigate quickly between sections of an article.
-- Tap to enjoy fullscreen reading. Citations are shown in a small popover.
+{% for screenshot in page.screenshots %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
 
 **Source Code**
 

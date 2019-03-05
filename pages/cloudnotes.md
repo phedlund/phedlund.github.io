@@ -7,6 +7,17 @@ permalink: /cloudnotes/
 date: 22 February 2019
 tags: [NextCloud, ownCloud, CloudNotes]
 sourcelink: https://github.com/owncloud/notes-iOS-App
+screenshots:
+  - filename: iphone1
+    caption : "Caption"
+  - filename: iphone2
+    caption : "Caption"
+  - filename: iphone3
+    caption : "Caption"
+  - filename: iphone4
+    caption : "Caption"
+  - filename: iphone5
+    caption : "Caption"
 ---
 
 CloudNotes is a notes app for iOS (iPhone, iPod touch, and iPad) and Mac OS X. CloudNotes syncs with the <a title="NextCloud Notes" href="https://github.com/nextcloud/notes/releases">Notes app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
@@ -25,6 +36,10 @@ Notes can be added and edited and they will be automatically saved and synced.
 **Download**
 
 [![App Store](../assets/img/App_Store_Badge.png)](https://itunes.apple.com/us/app/cloudnotes-owncloud-notes/id813973264?ls=1&mt=8)
+
+**Screenshots**
+
+{% for screenshot in page.screenshots %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
 
 **Source Code**
 

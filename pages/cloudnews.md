@@ -7,6 +7,17 @@ permalink: /cloudnews/
 date: 22 February 2019
 tags: [App, RSS, CloudNews]
 sourcelink: "https://github.com/owncloud/news-iOS-App"
+screenshots:
+  - filename: iphone1
+    caption : "Caption"
+  - filename: iphone2
+    caption : "Caption"
+  - filename: iphone3
+    caption : "Caption"
+  - filename: iphone4
+    caption : "Caption"
+  - filename: iphone5
+    caption : "Caption"
 ---
 
 CloudNews is a feed (RSS and Atom) reader for iOS (iPhone, iPod touch, and iPad). CloudNews syncs with the <a title="NextCloud News" href="https://github.com/nextcloud/news">News app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
@@ -19,6 +30,10 @@ CloudNews is a feed (RSS and Atom) reader for iOS (iPhone, iPod touch, and iPad)
 **Download**
 
 [![App Store](../assets/img/App_Store_Badge.png)](https://itunes.apple.com/us/app/iocnews/id683859706?ls=1&mt=8)
+
+**Screenshots**
+
+{% for screenshot in page.screenshots %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
 
 **Source Code**
 

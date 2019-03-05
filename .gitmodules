@@ -1,0 +1,6 @@
+[submodule "lightbox2"]
+	path = lightbox2
+	url = https://github.com/lokesh/lightbox2.git
+[submodule "jekyll-lightbox"]
+	path = jekyll-lightbox
+	url = https://github.com/appfoundry/jekyll-lightbox.git

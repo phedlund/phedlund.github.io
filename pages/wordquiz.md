@@ -7,7 +7,17 @@ permalink: /wordquiz/
 date: 22 February 2019
 tags: [WordQuiz, vocabulary]
 sourcelink: "https://github.com/phedlund/iwordquiz"
-
+screenshots:
+  - filename: iphone1
+    caption : "Caption"
+  - filename: iphone2
+    caption : "Caption"
+  - filename: iphone3
+    caption : "Caption"
+  - filename: iphone4
+    caption : "Caption"
+  - filename: iphone5
+    caption : "Caption"
 ---
 
 WordQuiz for iOS is a universal app that brings the power of WordQuiz to the iPad, iPhone, and iPod Touch. You can bring your vocabularies with you and practice anytime. You can also create new vocabularies and edit existing ones.
@@ -21,6 +31,10 @@ The features of WordQuiz for iOS are described in more detail in a video and thr
 **Download**
 
 [![App Store](../assets/img/App_Store_Badge.png)](https://itunes.apple.com/us/app/wordquiz-flashcards/id500521537?ls=1&mt=8)
+
+**Screenshots**
+
+{% for screenshot in page.screenshots %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
 
 **Source Code**
 
