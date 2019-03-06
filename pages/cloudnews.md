@@ -5,7 +5,7 @@ subtitle: "Feed reader for Nextcloud and ownCloud"
 feature-img: "assets/img/banner.jpg"
 permalink: /cloudnews/
 date: 22 February 2019
-tags: [App, RSS, CloudNews]
+tags: [NextCloud, ownCloud, RSS, CloudNews]
 sourcelink: "https://github.com/owncloud/news-iOS-App"
 screenshots:
   - filename: iphone1
