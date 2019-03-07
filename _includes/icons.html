@@ -130,6 +130,17 @@
 </li>
 {% endif %}
 
+{% if site.theme_settings.paypal %}
+<li>
+	<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business={{ site.theme_settings.paypal }}" title="PayPal - The safer, easier way to pay online!">
+		<span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-paypal fa-stack-1x fa-inverse"></i>
+        </span>
+	</a>
+</li>
+{% endif %}
+
 {% if site.theme_settings.pinterest %}
 <li>
 	<a href="http://www.pinterest.com/{{ site.theme_settings.pinterest }}" title="{{ site.theme_settings.str_follow_on }} Pinterest">
