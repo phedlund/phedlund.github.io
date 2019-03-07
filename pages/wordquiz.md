@@ -57,3 +57,10 @@ The features of WordQuiz for iOS are described in more detail in a video and thr
     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
   </span>
 </a>
+
+**Note**
+
+WordQuiz for Windows or macOS is no longer available. Legacy source code is available on [GitHub](https://github.com/phedlund/wordquiz "WordQuiz source code").
+
+KWordQuiz is available from the [KDE Edu Project](https://kde.org/applications/education/kwordquiz/).
+
