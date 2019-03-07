@@ -3,7 +3,7 @@ layout: page
 title: PMC Reader
 subtitle: "Reader for PubMed Central articles" 
 feature-img: "assets/img/banner.jpg"
-permalink: /pmc-reader/
+permalink: /pmcreader/
 date: 22 February 2019
 tags: [PMC Reader, PubMed, Pubmed Central]
 sourcelink: "https://github.com/phedlund/PMC-Reader"

@@ -18,6 +18,19 @@ screenshots:
     caption : "Caption"
   - filename: iphone5
     caption : "Caption"
+redirect_from:
+  - /wordquiz/features/
+  - /wordquiz/screenshots/
+  - /wordquiz/wq-download/
+  - /wordquiz/vocabularies/
+  - /wordquiz-for-ios/
+  - /wordquiz-for-ios/screenshots/
+  - /wordquiz-for-ios/download/
+  - /wordquiz-for-ios/vocabularies/
+  - /kwordquiz/
+  - /kwordquiz/screenshots/
+  - /kwordquiz/download/
+  - /kwordquiz/vocabularies/
 ---
 
 WordQuiz for iOS is a universal app that brings the power of WordQuiz to the iPad, iPhone, and iPod Touch. You can bring your vocabularies with you and practice anytime. You can also create new vocabularies and edit existing ones.
