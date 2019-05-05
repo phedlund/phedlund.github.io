@@ -18,6 +18,17 @@ screenshots:
     caption : "Caption"
   - filename: iphone5
     caption : "Caption"
+screenshots_ipad_:
+  - filename: ipad1
+    caption : "Caption"
+  - filename: ipad2
+    caption : "Caption"
+  - filename: ipad3
+    caption : "Caption"
+  - filename: ipad4
+    caption : "Caption"
+  - filename: ipad5
+    caption : "Caption"
 ---
 
 CloudNews is a feed (RSS and Atom) reader for iOS (iPhone, iPod touch, and iPad). CloudNews syncs with the <a title="NextCloud News" href="https://github.com/nextcloud/news">News app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
@@ -33,7 +44,13 @@ CloudNews is a feed (RSS and Atom) reader for iOS (iPhone, iPod touch, and iPad)
 
 **Screenshots**
 
+*iPhone*
+
 {% for screenshot in page.screenshots %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
+
+*iPad*
+
+{% for screenshot in page.screenshots_ipad %}[![{{ page.title }}](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}_tn.png)](../assets/img/apps{{ page.permalink}}{{ screenshot.filename }}.png "{{ screenshot.caption }}"){% endfor %}
 
 **Source Code**
 
