@@ -18,7 +18,7 @@ screenshots:
     caption : "Caption"
   - filename: iphone5
     caption : "Caption"
-screenshots_ipad_:
+screenshots_ipad:
   - filename: ipad1
     caption : "Caption"
   - filename: ipad2
