@@ -17,7 +17,7 @@ theme_settings:
   header_text: Welcome to PBH.dev
   header_feature_image: assets/img/banner.jpg
   footer_text: >
-    Copyright © 2019 Peter B. Hedlund
+    Copyright © 2020 Peter B. Hedlund
 
   # Icons
   rss: true  # Make sure you created a feed.xml with feed.xml layout
