@@ -1,12 +1,12 @@
 ---
 layout: page
 title: CloudNews
-subtitle: "Feed reader for Nextcloud and ownCloud" 
+subtitle: "Feed reader for Nextcloud and ownCloud"
 feature-img: "assets/img/banner.jpg"
 permalink: /cloudnews/
-date: 22 February 2019
+date: 20 April 2020
 tags: [NextCloud, ownCloud, RSS, CloudNews]
-sourcelink: "https://github.com/owncloud/news-iOS-App"
+sourcelink: "https://github.com/phedlund/CloudNews"
 screenshots:
   - filename: iphone1
     caption : "Caption"
@@ -32,7 +32,7 @@ screenshots_ipad:
 ---
 
 CloudNews is a feed (RSS and Atom) reader for iOS (iPhone, iPod touch, and iPad). CloudNews syncs with the <a title="NextCloud News" href="https://github.com/nextcloud/news">News app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
-          
+
 - Feeds can be added by entering their address (url) and will be synced.
 - CloudNews uses swipe and pull gestures for most features making the interface clean and easy to understand.
 - You can choose to read just the summary of an article or the original web version.

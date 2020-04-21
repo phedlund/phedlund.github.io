@@ -1,12 +1,12 @@
 ---
 layout: page
 title: CloudNotes
-subtitle: "Notes app for Nextcloud and ownCloud" 
+subtitle: "Notes app for Nextcloud and ownCloud"
 feature-img: "assets/img/banner.jpg"
 permalink: /cloudnotes/
-date: 22 February 2019
+date: 20 April 2020
 tags: [NextCloud, ownCloud, CloudNotes]
-sourcelink: https://github.com/owncloud/notes-iOS-App
+sourcelink: https://github.com/phedlund/CloudNotes
 screenshots:
   - filename: iphone1
     caption : "Caption"
@@ -20,7 +20,7 @@ screenshots:
     caption : "Caption"
 ---
 
-CloudNotes is a notes app for iOS (iPhone, iPod touch, and iPad) and Mac OS X. CloudNotes syncs with the <a title="NextCloud Notes" href="https://github.com/nextcloud/notes/releases">Notes app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
+CloudNotes is a notes app for iOS (iPhone, iPod touch, and iPad) and macOS. CloudNotes syncs with the <a title="NextCloud Notes" href="https://github.com/nextcloud/notes/releases">Notes app</a> of your <a href="https://nextcloud.com">NextCloud</a> or <a href="http://owncloud.org">ownCloud</a> server (server access is required).
 
 Notes can be added and edited and they will be automatically saved and synced.
 
@@ -35,7 +35,13 @@ Notes can be added and edited and they will be automatically saved and synced.
 
 **Download**
 
+_iOS_
+
 [![App Store](../assets/img/App_Store_Badge.png)](https://itunes.apple.com/us/app/cloudnotes-owncloud-notes/id813973264?ls=1&mt=8)
+
+_macOS_
+
+[CloudNotes for macOS](https://github.com/phedlund/CloudNotes/releases/download/v1.0.0_mac/CloudNotes.dmg)
 
 **Screenshots**
 
