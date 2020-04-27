@@ -41,7 +41,7 @@ _iOS_
 
 _macOS_
 
-[CloudNotes for macOS](https://github.com/phedlund/CloudNotes/releases/download/v1.0.0_mac/CloudNotes.dmg)
+[CloudNotes for macOS](https://github.com/phedlund/CloudNotes/releases/download/v1.0.1_mac/CloudNotes-1.0.1.dmg)
 
 **Screenshots**
 
