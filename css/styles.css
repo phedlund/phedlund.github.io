@@ -145,7 +145,7 @@ a {
     margin-bottom: 40px;
 }
 
-.section-page ul {
+.section-page ol ul {
     list-style: disc outside none;
     margin-left: 0;
     padding-left: 1em;
@@ -154,6 +154,14 @@ a {
 }
 
 .content ul {
+    list-style: disc outside none;
+    margin-left: 0;
+    padding-left: 1em;
+    line-height: 1.3em;
+    margin-bottom: 15px;
+}
+
+.content ol {
     list-style: disc outside none;
     margin-left: 0;
     padding-left: 1em;
