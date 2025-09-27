@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Peter Hedlund" />
+    <meta name="generator" content="Ignite v0.6.0" />
+    <title>Home</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://pbh.dev/home" rel="canonical" />
+    <link href="/favicon/favicon.ico" rel="icon" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta property="og:site_name" content="PBH.dev" />
+    <meta property="og:title" content="Home" />
+    <meta name="twitter:title" content="Home" />
+    <meta property="og:url" content="https://pbh.dev/home" />
+    <meta name="twitter:domain" content="pbh.dev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+  </head>
+  <body class="container">
+    <div class="fixed-top">
+      <header>
+        <nav class="navbar navbar-expand-md" style="border-bottom: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+          <div class="container flex-wrap flex-lg-nowrap">
+            <div class="me-2 me-md-auto">
+              <a href="/home" class="d-inline-flex align-items-center navbar-brand" style="font-weight: 700">PBH.dev</a>
+            </div>
+            <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+                <li class="nav-item"><a href="/home" class="nav-link active text-nowrap" aria-current="page">News</a></li>
+                <li class="nav-item"><a href="/cloud-news" class="nav-link text-nowrap">CloudNews</a></li>
+                <li class="nav-item"><a href="/cloud-notes" class="nav-link text-nowrap">CloudNotes</a></li>
+                <li class="nav-item"><a href="/privacy" class="nav-link text-nowrap">Privacy</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link text-nowrap">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="ig-main-content" style="padding-top: 90px; padding-bottom: 180px">
+      <h1 class="text-center">Latest News</h1>
+      <div class="vstack">
+        <ul class="text-center mb-0 align-self-center" style="width: 100%; max-width: 700px">
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2025-09-24-CloudNews-4-1-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 4.1.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">September 24, 2025</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">This release is fully updated for iOS and iPadOS 26 (required)</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2025-02-09-CloudNews-4-0-2" class="fs-5 mb-0 align-self-start link-plain">CloudNews 4.0.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">February 9, 2025</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">This release fixes syncing with the newest version of Nextcloud News on the server</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2023-04-05-CloudNews-4-0-1" class="fs-5 mb-0 align-self-start link-plain">CloudNews 4.0.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">April 5, 2023</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNews is back with a completely rewritten version that has a fresh and responsive interface. And a brand new native app for macOS! 4.0.1 adds some important bug fixes.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2023-03-15-CloudNews-4-0-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 4.0.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">March 15, 2023</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNews is back with a completely rewritten version that has a fresh and responsive interface. And a brand new native app for macOS!</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2023-01-12-CloudNotes-NC" class="fs-5 mb-0 align-self-start link-plain">CloudNotes acquired by Nextcloud</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">January 12, 2023</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes has been acquired by Nextcloud.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2023-01-08-CloudNotes-4-1-4" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.1.4 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">January 7, 2023</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.1.4 fixes a crash issue seem by some users.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-11-30-CloudNotes-4-1-3" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.1.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 30, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.1.3 fixes a refresh issue while in offline mode.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-11-27-CloudNotes-4-1-2" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.1.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 27, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.1.2 fixes a scrolling issue on smaller iPhones.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-10-30-CloudNotes-4-1-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.1.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">October 30, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.1.1 fixes an issue with note titles in offline mode.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-10-28-CloudNotes-4-1-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.1.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">October 28, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.1.0 improves the support for self-signed and other certificates that are not fully trusted by iOS.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-10-02-CloudNotes-4-0-4" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.0.4 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">October 2, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.0.4 improves the support for lists in Markdown.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-05-31-CloudNotes-4-0-3" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.0.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 31, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.0.3 Fixes bugs and improves performance.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-05-18-CloudNotes-4-0-2" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.0.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 18, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.0.2 fixes a crash issue when editing notes.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-05-16-CloudNotes-4-0-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.0.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 15, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.0.1 fixes a crash issue when creating a new note.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2022-05-14-CloudNotes-4-0-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 4.0.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 14, 2022</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 4.0.0 is a major update with focus on Markdown support. Easily work with unordered, ordered, and task lists. Additionally the support for formatting source code in Markdown is much improved.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-12-13-CloudNotes-3-7-3" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.7.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">December 13, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.7.3 fixes a crash bug</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-12-06-CloudNotes-3-7-2" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.7.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">December 6, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.7.2 fixes a crash bug</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-11-28-CloudNotes-3-7-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.7.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 28, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.7.1 fixes a crash bug</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-11-25-CloudNotes-3-7-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.7.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 25, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.7.0 provides fixes and enhancements to better support iOS 15.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-11-25-CloudNews-3-13-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.13.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 25, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNews 3.13.0 adds several dark mode improvements.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-11-09-CloudNotes-3-6-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.6.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 9, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.6.0 add Korean localization and other minor enhancements.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-09-22-CloudNotes-3-5-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.5.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">September 22, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.5.0 has the following enhancements:</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-08-10-CloudNotes-3-4-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.4.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">August 10, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes 3.4.0 has the following enhancements:</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-06-28-CloudNews-3-12-2" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.12.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 28, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNews 3.12.2 fixes several UI issues.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-06-16-CloudNews-3-12-1" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.12.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 15, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNews 3.12.1 fixes a crash bug and layout issue.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-06-10-CloudNews-3-12-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.12.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 10, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">Compact view for the article list</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-02-14-CloudNotes-3-3-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.3.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">February 14, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">CloudNotes is now localized in French.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2021-01-17-CloudNews-3-11-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.11.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">January 17, 2021</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">Dark mode improvements</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-11-25-CloudNews-3-10-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.10.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 25, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">Adds compatibility with upcoming versions of Nextcloud News.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-11-08-CloudNotes-3-2-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.2.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 8, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">A small release with some bug fixes and performance improvements.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-10-15-CloudNotes-3-2-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.2.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">October 15, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">Fixes an issue where the option to rename a note was not seen by some users.</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-08-29-CloudNotes-3-1-3" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.1.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">August 29, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-07-06-CloudNotes-3-1-2" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.1.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">July 6, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-07-05-CloudNotes-3-1-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.1.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">July 5, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-06-24-CloudNotes-3-1-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.1.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 24, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">Adds ability to manually edit note titles</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-06-03-CloudNotes-3-0-9" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.9 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 3, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-06-01-CloudNotes-3-0-8" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.8 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">June 1, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-05-21-CloudNotes-3-0-7" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.7 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 21, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-05-11-CloudNotes-3-0-6" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.6 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 11, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-05-10-CloudNotes-3-0-5" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.5 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">May 10, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-04-27-CloudNotes-macOS-1-0-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes for macOS 1.0.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">April 27, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/mac-o-s" class="link-plain">macOS</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-04-20-CloudNotes-macOS-1-0-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes for macOS 1.0.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">April 20, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/mac-o-s" class="link-plain">macOS</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2020-04-14-CloudNotes-3-0-4" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.4 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">April 14, 2020</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-12-31-CloudNotes-3-0-3" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">December 31, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-11-27-CloudNotes-3-0-2" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 27, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-11-25-CloudNotes-3-0-1" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 25, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-11-22-CloudNotes-3-0-0" class="fs-5 mb-0 align-self-start link-plain">CloudNotes 3.0.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">November 22, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px">There are also new features like</p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-notes" class="link-plain">CloudNotes</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-10-08-CloudNews-3-9-1" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.9.1 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">October 8, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-09-28-CloudNews-3-9-0" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.9.0 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">September 28, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-07-30-CloudNews-3-8-5" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.8.5 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">July 30, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-04-24-CloudNews-3-8-4" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.8.4 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">April 24, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-02-25-CloudNews-3-8-3" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.8.3 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">February 25, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+          <div style="padding-bottom: 16px">
+            <div class="vstack" style="padding: 16px; background-color: rgb(0 0 0 / 5%); border-radius: 16px">
+              <a href="/2019-02-22-CloudNews-3-8-2" class="fs-5 mb-0 align-self-start link-plain">CloudNews 3.8.2 released</a>
+              <p class="mb-0 align-self-start" style="color: rgb(128 128 128 / 100%)">February 22, 2019</p>
+              <p class="mb-0 align-self-start" style="padding-top: 16px"></p>
+              <div class="mb-0 align-self-start hstack gap-3" style="padding-top: 8px">
+                <span class="mb-0 align-self-center badge text-bg-dark rounded-pill"><a href="/tags/cloud-news" class="link-plain">CloudNews</a></span>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="fixed-bottom">
+      <div class="py-3 mt-5 vstack" style="border-top: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+        <div class="fs-2 mb-0 align-self-center hstack gap-3">
+          <a target="_blank" rel="noopener noreferrer" href="/feed.rss" class="mb-0 align-self-center link-secondary"><i class="bi-rss"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/phedlund" class="mb-0 align-self-center link-secondary"><i class="bi-github"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=AXQCA3ZJU6TNS" class="mb-0 align-self-center link-secondary"><i class="bi-paypal"></i></a>
+        </div>
+        <p class="mb-0 align-self-center">Copyright © 2025 Peter B Hedlund</p>
+        <p class="mb-0 align-self-center">Created in Swift with <a target="_blank" rel="noopener noreferrer" href="https://github.com/twostraws/Ignite" class="link-secondary">Ignite</a></p>
+      </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>

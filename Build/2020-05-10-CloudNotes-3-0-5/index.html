@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Peter Hedlund" />
+    <meta name="generator" content="Ignite v0.6.0" />
+    <title>CloudNotes 3.0.5 released</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://pbh.dev/2020-05-10-CloudNotes-3-0-5" rel="canonical" />
+    <link href="/favicon/favicon.ico" rel="icon" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta property="og:site_name" content="PBH.dev" />
+    <meta property="og:title" content="CloudNotes 3.0.5 released" />
+    <meta name="twitter:title" content="CloudNotes 3.0.5 released" />
+    <meta property="og:url" content="https://pbh.dev/2020-05-10-CloudNotes-3-0-5" />
+    <meta name="twitter:domain" content="pbh.dev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+  </head>
+  <body class="container">
+    <div class="fixed-top">
+      <header>
+        <nav class="navbar navbar-expand-md" style="border-bottom: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+          <div class="container flex-wrap flex-lg-nowrap">
+            <div class="me-2 me-md-auto">
+              <a href="/home" class="d-inline-flex align-items-center navbar-brand" style="font-weight: 700">PBH.dev</a>
+            </div>
+            <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+                <li class="nav-item"><a href="/home" class="nav-link text-nowrap">News</a></li>
+                <li class="nav-item"><a href="/cloud-news" class="nav-link text-nowrap">CloudNews</a></li>
+                <li class="nav-item"><a href="/cloud-notes" class="nav-link text-nowrap">CloudNotes</a></li>
+                <li class="nav-item"><a href="/privacy" class="nav-link text-nowrap">Privacy</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link text-nowrap">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="ig-main-content" style="padding-top: 90px; padding-bottom: 180px">
+      <h1 class="text-center">CloudNotes 3.0.5 released</h1>
+      <p></p>
+    </div>
+    <div class="fixed-bottom">
+      <div class="py-3 mt-5 vstack" style="border-top: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+        <div class="fs-2 mb-0 align-self-center hstack gap-3">
+          <a target="_blank" rel="noopener noreferrer" href="/feed.rss" class="mb-0 align-self-center link-secondary"><i class="bi-rss"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/phedlund" class="mb-0 align-self-center link-secondary"><i class="bi-github"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=AXQCA3ZJU6TNS" class="mb-0 align-self-center link-secondary"><i class="bi-paypal"></i></a>
+        </div>
+        <p class="mb-0 align-self-center">Copyright © 2025 Peter B Hedlund</p>
+        <p class="mb-0 align-self-center">Created in Swift with <a target="_blank" rel="noopener noreferrer" href="https://github.com/twostraws/Ignite" class="link-secondary">Ignite</a></p>
+      </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>

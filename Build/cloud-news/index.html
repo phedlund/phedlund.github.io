@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Peter Hedlund" />
+    <meta name="generator" content="Ignite v0.6.0" />
+    <title>CloudNews</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/css/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="/css/ignite-core.min.css" rel="stylesheet" />
+    <link href="https://pbh.dev/cloud-news" rel="canonical" />
+    <link href="/favicon/favicon.ico" rel="icon" />
+    <script>(function() {
+    function getThemePreference() {
+        return localStorage.getItem('custom-theme') || 'auto';
+    }
+
+    function applyTheme(themeID) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const lightThemeID = document.documentElement.getAttribute('data-light-theme') || 'light';
+        const darkThemeID = document.documentElement.getAttribute('data-dark-theme') || 'dark';
+        const actualThemeID = themeID === 'auto' ? (prefersDark ? darkThemeID : lightThemeID) : themeID;
+
+        document.documentElement.setAttribute('data-bs-theme', actualThemeID);
+        document.documentElement.setAttribute('data-theme-state', themeID);
+    }
+
+    function applySyntaxTheme() {
+        const syntaxTheme = getComputedStyle(document.documentElement)
+            .getPropertyValue('--syntax-highlight-theme').trim().replace(/"/g, '');
+
+        if (!syntaxTheme) return;
+
+        document.querySelectorAll('link[data-highlight-theme]').forEach(link => {
+            link.setAttribute('disabled', 'disabled');
+        });
+
+        const themeLink = document.querySelector(`link[data-highlight-theme="${syntaxTheme}"]`);
+        if (themeLink) {
+            themeLink.removeAttribute('disabled');
+        }
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        const currentTheme = getThemePreference();
+        if (currentTheme === 'auto') {
+            applyTheme('auto');
+            applySyntaxTheme();
+        }
+    });
+
+    const savedTheme = getThemePreference();
+    applyTheme(savedTheme);
+    applySyntaxTheme();
+})();
+</script>
+    <meta property="og:site_name" content="PBH.dev" />
+    <meta property="og:title" content="CloudNews" />
+    <meta name="twitter:title" content="CloudNews" />
+    <meta property="og:url" content="https://pbh.dev/cloud-news" />
+    <meta name="twitter:domain" content="pbh.dev" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:dnt" content="on" />
+  </head>
+  <body class="container">
+    <div class="fixed-top">
+      <header>
+        <nav class="navbar navbar-expand-md" style="border-bottom: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+          <div class="container flex-wrap flex-lg-nowrap">
+            <div class="me-2 me-md-auto">
+              <a href="/home" class="d-inline-flex align-items-center navbar-brand" style="font-weight: 700">PBH.dev</a>
+            </div>
+            <button type="button" class="navbar-toggler btn" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="navbar-nav mb-2 mb-md-0 col justify-content-end">
+                <li class="nav-item"><a href="/home" class="nav-link text-nowrap">News</a></li>
+                <li class="nav-item"><a href="/cloud-news" class="nav-link active text-nowrap" aria-current="page">CloudNews</a></li>
+                <li class="nav-item"><a href="/cloud-notes" class="nav-link text-nowrap">CloudNotes</a></li>
+                <li class="nav-item"><a href="/privacy" class="nav-link text-nowrap">Privacy</a></li>
+                <li class="nav-item"><a href="/contact" class="nav-link text-nowrap">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="ig-main-content" style="padding-top: 90px; padding-bottom: 180px">
+      <h1 class="text-center">CloudNews</h1>
+      <p>CloudNews is a feed (RSS and Atom) reader for iOS and macOS. CloudNews syncs with the <a href="https://github.com/nextcloud/news" class="link-plain" style="color: rgb(72 61 139 / 100%)">News app</a> on your <a href="https://nextcloud.com" class="link-plain" style="color: rgb(72 61 139 / 100%)">Nextcloud</a> server (server access is required).</p>
+      <ul>
+        <li>Both iOS, iPadOS, and macOS fully supported with native apps.</li>
+        <li>Home screen widget with the most recent articles.</li>
+        <li>Feeds can be added by entering their address (url) and will be synced.</li>
+        <li>You can choose to read just the summary of an article or the original web version.</li>
+        <li>Articles can be shared using several services.</li>
+        <li>Organize feeds in folders</li>
+      </ul>
+      <p style="font-weight: 700">Download</p>
+      <a rel="noopener noreferrer" href="https://itunes.apple.com/us/app/iocnews/id683859706?ls=1&amp;mt=8" class="text-decoration-none"><img src="/images/App_Store_Badge.png" alt="App Store" style="padding-bottom: 16px" /></a>
+      <p style="font-weight: 700">Screenshots</p>
+      <p><em>iPhone</em></p>
+      <div class="row justify-content-center" style="padding-bottom: 16px; row-gap: 10px">
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/iphone1.png" class="text-decoration-none"><img src="/images/apps/cloudnews/iphone1_tn.png" alt="iPhone 1" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/iphone2.png" class="text-decoration-none"><img src="/images/apps/cloudnews/iphone2_tn.png" alt="iPhone 2" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/iphone3.png" class="text-decoration-none"><img src="/images/apps/cloudnews/iphone3_tn.png" alt="iPhone 3" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/iphone4.png" class="text-decoration-none"><img src="/images/apps/cloudnews/iphone4_tn.png" alt="iPhone 4" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/iphone5.png" class="text-decoration-none"><img src="/images/apps/cloudnews/iphone5_tn.png" alt="iPhone 5" /></a>
+        </div>
+      </div>
+      <p><em>iPad</em></p>
+      <div class="row justify-content-center" style="padding-bottom: 16px; row-gap: 10px">
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/ipad1.png" class="text-decoration-none"><img src="/images/apps/cloudnews/ipad1_tn.png" alt="iPad 1" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/ipad2.png" class="text-decoration-none"><img src="/images/apps/cloudnews/ipad2_tn.png" alt="iPad 2" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/ipad3.png" class="text-decoration-none"><img src="/images/apps/cloudnews/ipad3_tn.png" alt="iPad 3" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/ipad4.png" class="text-decoration-none"><img src="/images/apps/cloudnews/ipad4_tn.png" alt="iPad 4" /></a>
+        </div>
+      </div>
+      <p><em>Mac</em></p>
+      <div class="row justify-content-center" style="padding-bottom: 16px; row-gap: 10px">
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/mac1.png" class="text-decoration-none"><img src="/images/apps/cloudnews/mac1_tn.png" alt="Mac 1" /></a>
+        </div>
+        <div class="col align-self-center">
+          <a rel="noopener noreferrer" href="/images/apps/cloudnews/mac2.png" class="text-decoration-none"><img src="/images/apps/cloudnews/mac2_tn.png" alt="Mac 2" /></a>
+        </div>
+      </div>
+      <p style="font-weight: 700">Source Code</p>
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/phedlund/CloudNewsApp" class="link-secondary"><i class="fs-2 bi-github"></i></a>
+    </div>
+    <div class="fixed-bottom">
+      <div class="py-3 mt-5 vstack" style="border-top: 1.0px solid rgb(211 211 211 / 100%); background-color: rgb(255 255 255 / 85%)">
+        <div class="fs-2 mb-0 align-self-center hstack gap-3">
+          <a target="_blank" rel="noopener noreferrer" href="/feed.rss" class="mb-0 align-self-center link-secondary"><i class="bi-rss"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/phedlund" class="mb-0 align-self-center link-secondary"><i class="bi-github"></i></a>
+          <a target="_blank" rel="noopener noreferrer" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=AXQCA3ZJU6TNS" class="mb-0 align-self-center link-secondary"><i class="bi-paypal"></i></a>
+        </div>
+        <p class="mb-0 align-self-center">Copyright © 2025 Peter B Hedlund</p>
+        <p class="mb-0 align-self-center">Created in Swift with <a target="_blank" rel="noopener noreferrer" href="https://github.com/twostraws/Ignite" class="link-secondary">Ignite</a></p>
+      </div>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/ignite-core.js"></script>
+  </body>
+</html>
