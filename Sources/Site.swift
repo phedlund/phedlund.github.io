@@ -27,7 +27,7 @@ struct PbhDotDev: Site {
     var tagPage = Tags()
     
     var favicon: URL? { URL(static: "/favicon/favicon.ico") }
-    var feedConfiguration = FeedConfiguration(mode: .full, contentCount: 20, image: .init(url: "https://pbh.dev.com/favicon/favicon.png", width: 48, height: 48))
+    var feedConfiguration = FeedConfiguration(mode: .full, contentCount: 20, image: .init(url: "https://pbh.dev/favicon/favicon.png", width: 48, height: 48))
     var robotsConfiguration = Robots()
 
     var staticPages: [any StaticPage] {
