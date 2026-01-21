@@ -33,7 +33,7 @@ public struct Footer: HTML {
                 }
             }
             .font(.title2)
-            Text("Copyright © 2025 Peter B Hedlund")
+            Text("Copyright © 2026 Peter B Hedlund")
             Text {
                 "Created in Swift with "
                 Link("Ignite", target: URL(static: "https://github.com/twostraws/Ignite"))
