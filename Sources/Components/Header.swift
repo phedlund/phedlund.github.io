@@ -14,6 +14,7 @@ public struct Header: HTML {
         NavigationBar {
             Link("News", target: Home())
             Link("CloudNews", target: CloudNews())
+            Link("CloudDeck", target: CloudDeck())
             Link("CloudNotes", target: CloudNotes())
             Link("Privacy", target: Privacy())
             Link("Contact", target: Contact())

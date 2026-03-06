@@ -33,6 +33,7 @@ struct PbhDotDev: Site {
     var staticPages: [any StaticPage] {
         Home()
         CloudNews()
+        CloudDeck()
         CloudNotes()
         Privacy()
         Contact()
