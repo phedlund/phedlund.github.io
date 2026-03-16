@@ -8,7 +8,7 @@ struct Privacy: StaticPage {
         Text("Privacy Policy")
             .font(.title1)
             .horizontalAlignment(.center)
-        Text("CloudNews does not share any personal data with its publisher or any third party.")
+        Text("CloudDeck and CloudNews do not share any personal data with its publisher or any third party.")
             .font(.body)
     }
 }
