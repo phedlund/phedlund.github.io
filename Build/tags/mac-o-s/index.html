@@ -65,6 +65,7 @@
     <meta name="twitter:domain" content="pbh.dev" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:dnt" content="on" />
+    <link href="/css/simple-lightbox.min.css" rel="stylesheet" />
   </head>
   <body class="container">
     <div class="fixed-top">
@@ -129,6 +130,13 @@
         <p class="mb-0 align-self-center">Created in Swift with <a target="_blank" rel="noopener noreferrer" href="https://github.com/twostraws/Ignite" class="link-secondary">Ignite</a></p>
       </div>
     </div>
+    <script src="/js/simple-lightbox.min.js"></script>
+    <script>    document.addEventListener('DOMContentLoaded', function() {
+        new SimpleLightbox('.gallery a', {
+            overlayOpacity: 0.8,
+            captionDelay: 250
+        });
+    });</script>
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script src="/js/ignite-core.js"></script>
   </body>

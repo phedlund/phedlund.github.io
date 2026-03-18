@@ -20,21 +20,21 @@ struct CloudDeck: StaticPage {
             " server (server access is required)."
         }
 
-        Text("Public Beta")
-            .fontWeight(.bold)
-        Link("TestFlight", target: "https://testflight.apple.com/join/3khTcNKR")
-            .role(.secondary)
-            .target(.blank)
-            .relationship(.noOpener, .noReferrer)
-
-//        List {
-//            "Both iOS, iPadOS, and macOS fully supported with native apps."
-//            "Home screen widget with the most recent articles."
-//            "Feeds can be added by entering their address (url) and will be synced."
-//            "You can choose to read just the summary of an article or the original web version."
-//            "Articles can be shared using several services."
-//            "Organize feeds in folders"
-//        }
+        List {
+            Text("Both iOS and iPadOS fully supported with native apps.")
+            Text("Create, edit, and delete boards, lists, and cards")
+            Text("Archive boards and cards")
+            Text("Reorder boards, lists, and cards using drag and drop")
+            ListItem {
+                Text("On cards:")
+                List {
+                    Text("Edit title")
+                    Text("Edit description using markdown")
+                    Text("Add or delete labels, due date, and assigned users")
+                    Text("Mark cards as done")
+                }
+            }
+        }
 //        Text("Download")
 //            .fontWeight(.bold)
 //        Link(target: "https://itunes.apple.com/us/app/iocnews/id683859706?ls=1&mt=8") {
@@ -43,30 +43,43 @@ struct CloudDeck: StaticPage {
 //        }
 //        .relationship(.noOpener, .noReferrer)
 //        .class("text-decoration-none")
-//        Text("Screenshots")
-//            .fontWeight(.bold)
-//
-//        Text(markdown: "*iPhone*")
-//
-//        Grid(ScreenShot.screenShots.filter( { $0.device == .iphone }), spacing: 10) { screenshot in
-//            Link(target: screenshot.image) {
-//                Image(screenshot.thumbnail, description: screenshot.description)
-//            }
-//            .relationship(.noOpener, .noReferrer)
-//            .class("text-decoration-none")
-//        }
-//        .padding(.bottom, 16)
-//
-//        Text(markdown: "*iPad*")
-//
-//        Grid(ScreenShot.screenShots.filter( { $0.device == .ipad }), spacing: 10) { screenshot in
-//            Link(target: screenshot.image) {
-//                Image(screenshot.thumbnail, description: screenshot.description)
-//            }
-//            .relationship(.noOpener, .noReferrer)
-//            .class("text-decoration-none")
-//        }
-//        .padding(.bottom, 16)
+
+        Text("Public Beta")
+            .fontWeight(.bold)
+        Link("TestFlight", target: "https://testflight.apple.com/join/3khTcNKR")
+            .role(.secondary)
+            .target(.blank)
+            .relationship(.noOpener, .noReferrer)
+
+        Text("Screenshots")
+            .fontWeight(.bold)
+            .padding(.top, 16)
+
+        Text(markdown: "*iPhone*")
+
+        Grid(ScreenShot.cdScreenShots.filter( { $0.device == .iphone }), spacing: 10) { screenshot in
+            Link(target: screenshot.image) {
+                Image(screenshot.thumbnail, description: screenshot.description)
+            }
+            .relationship(.noOpener, .noReferrer)
+            .class("gallery-item")
+            .class("text-decoration-none")
+        }
+        .class("gallery")
+        .padding(.bottom, 16)
+
+        Text(markdown: "*iPad*")
+
+        Grid(ScreenShot.cdScreenShots.filter( { $0.device == .ipad }), spacing: 10) { screenshot in
+            Link(target: screenshot.image) {
+                Image(screenshot.thumbnail, description: screenshot.description)
+            }
+            .relationship(.noOpener, .noReferrer)
+            .class("gallery-item")
+            .class("text-decoration-none")
+        }
+        .class("gallery")
+        .padding(.bottom, 16)
 //
 //        Text(markdown: "*Mac*")
 //

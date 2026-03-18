@@ -39,36 +39,41 @@ struct CloudNews: StaticPage {
             .fontWeight(.bold)
 
         Text(markdown: "*iPhone*")
-
-        Grid(ScreenShot.screenShots.filter( { $0.device == .iphone }), spacing: 10) { screenshot in
+        Grid(ScreenShot.cnScreenShots.filter( { $0.device == .iphone }), spacing: 10) { screenshot in
             Link(target: screenshot.image) {
                 Image(screenshot.thumbnail, description: screenshot.description)
             }
             .relationship(.noOpener, .noReferrer)
+            .class("gallery-item")
             .class("text-decoration-none")
         }
+        .class("gallery")
         .padding(.bottom, 16)
 
         Text(markdown: "*iPad*")
 
-        Grid(ScreenShot.screenShots.filter( { $0.device == .ipad }), spacing: 10) { screenshot in
+        Grid(ScreenShot.cnScreenShots.filter( { $0.device == .ipad }), spacing: 10) { screenshot in
             Link(target: screenshot.image) {
                 Image(screenshot.thumbnail, description: screenshot.description)
             }
             .relationship(.noOpener, .noReferrer)
+            .class("gallery-item")
             .class("text-decoration-none")
         }
+        .class("gallery")
         .padding(.bottom, 16)
 
         Text(markdown: "*Mac*")
 
-        Grid(ScreenShot.screenShots.filter( { $0.device == .mac }), spacing: 10) { screenshot in
+        Grid(ScreenShot.cnScreenShots.filter( { $0.device == .mac }), spacing: 10) { screenshot in
             Link(target: screenshot.image) {
                 Image(screenshot.thumbnail, description: screenshot.description)
             }
             .relationship(.noOpener, .noReferrer)
+            .class("gallery-item")
             .class("text-decoration-none")
         }
+        .class("gallery")
         .padding(.bottom, 16)
 
         Text("Source Code")

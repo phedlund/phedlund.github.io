@@ -21,7 +21,7 @@ struct ScreenShot {
 }
 
 extension ScreenShot {
-    static var screenShots: [ScreenShot] {
+    static var cnScreenShots: [ScreenShot] {
         return [ScreenShot(device: .iphone,
                            thumbnail: "/images/apps/cloudnews/iphone1_tn.png",
                            image: "/images/apps/cloudnews/iphone1.png",
@@ -76,5 +76,60 @@ extension ScreenShot {
                            description: "Mac 2")
         ]
     }
-    
+
+    static var cdScreenShots: [ScreenShot] {
+        return [ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone1_tn.png",
+                           image: "/images/apps/clouddeck/iphone1.png",
+                           description: "iPhone 1"),
+                ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone2_tn.png",
+                           image: "/images/apps/clouddeck/iphone2.png",
+                           description: "iPhone 2"),
+                ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone3_tn.png",
+                           image: "/images/apps/clouddeck/iphone3.png",
+                           description: "iPhone 3"),
+                ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone4_tn.png",
+                           image: "/images/apps/clouddeck/iphone4.png",
+                           description: "iPhone 4"),
+                ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone5_tn.png",
+                           image: "/images/apps/clouddeck/iphone5.png",
+                           description: "iPhone 5"),
+                ScreenShot(device: .iphone,
+                           thumbnail: "/images/apps/clouddeck/iphone6_tn.png",
+                           image: "/images/apps/clouddeck/iphone6.png",
+                           description: "iPhone 6"),
+                ScreenShot(device: .ipad,
+                           thumbnail: "/images/apps/clouddeck/ipad1_tn.png",
+                           image: "/images/apps/clouddeck/ipad1.png",
+                           description: "iPad 1"),
+                ScreenShot(device: .ipad,
+                           thumbnail: "/images/apps/clouddeck/ipad2_tn.png",
+                           image: "/images/apps/clouddeck/ipad2.png",
+                           description: "iPad 2"),
+                ScreenShot(device: .ipad,
+                           thumbnail: "/images/apps/clouddeck/ipad3_tn.png",
+                           image: "/images/apps/clouddeck/ipad3.png",
+                           description: "iPad 3"),
+                ScreenShot(device: .ipad,
+                           thumbnail: "/images/apps/clouddeck/ipad4_tn.png",
+                           image: "/images/apps/clouddeck/ipad4.png",
+                           description: "iPad 4"),
+                ScreenShot(device: .ipad,
+                           thumbnail: "/images/apps/clouddeck/ipad5_tn.png",
+                           image: "/images/apps/clouddeck/ipad5.png",
+                           description: "iPad 5"),
+                ScreenShot(device: .mac,
+                           thumbnail: "/images/apps/clouddeck/mac1_tn.png",
+                           image: "/images/apps/clouddeck/mac1.png",
+                           description: "Mac 1"),
+                ScreenShot(device: .mac,
+                           thumbnail: "/images/apps/clouddeck/mac2_tn.png",
+                           image: "/images/apps/clouddeck/mac2.png",
+                           description: "Mac 2")
+        ]
+    }
 }
