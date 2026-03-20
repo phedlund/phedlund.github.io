@@ -35,21 +35,14 @@ struct CloudDeck: StaticPage {
                 }
             }
         }
-//        Text("Download")
-//            .fontWeight(.bold)
-//        Link(target: "https://itunes.apple.com/us/app/iocnews/id683859706?ls=1&mt=8") {
-//            Image("/images/App_Store_Badge.png", description: "App Store")
-//                .padding(.bottom, 16)
-//        }
-//        .relationship(.noOpener, .noReferrer)
-//        .class("text-decoration-none")
-
-        Text("Public Beta")
+        Text("Download")
             .fontWeight(.bold)
-        Link("TestFlight", target: "https://testflight.apple.com/join/3khTcNKR")
-            .role(.secondary)
-            .target(.blank)
-            .relationship(.noOpener, .noReferrer)
+        Link(target: "https://apps.apple.com/us/app/clouddeck/id6760156027") {
+            Image("/images/App_Store_Badge.png", description: "App Store")
+                .padding(.bottom, 16)
+        }
+        .relationship(.noOpener, .noReferrer)
+        .class("text-decoration-none")
 
         Text("Screenshots")
             .fontWeight(.bold)
